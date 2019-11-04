@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+  <th:block th:each="item: ${items}">
+    <dt>
+    <span class="name" th:text="${item.value.id}"></span>
+    <span class="name" th:text="${item.value.price}"></span>
+    </dt>
+  </th:block>
+  <a href= "/ListView" >商品一覧へ戻る</a>
+</body>
+</html>

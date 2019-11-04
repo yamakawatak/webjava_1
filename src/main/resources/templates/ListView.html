@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>ListView</title>
+</head>
+<body>
+
+<dl>
+  <th:block th:each="item: ${items}">
+    <dt>
+      <span class="name" th:text="${item.value.name}"></span>
+      <span class="price" th:text="${item.value.price}"></span>
+
+      <form action="#" th:action="@{/CartView}" th:object="${listForm}" method="post">
+      個数：<input type="text" th:field="*{num}"/>
+      <input type="hidden" name="id" th:value="${item.value.id}"/>
+      <input type="submit" value="カートに入れる" />
+      </form>
+    </dt>
+  </th:block>
+</dl>
+
+
+</body>
+</html>
